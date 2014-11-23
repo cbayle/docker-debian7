@@ -1,6 +1,7 @@
 # Build a simple docker image using debootstrap
 docker-debian7: depends scratch
 	sudo /usr/share/docker.io/contrib/mkimage.sh -t debian:7 debootstrap --variant=minbase wheezy
+	docker tag debian:7 debian:wheezy
 
 # docker seems to require a scratch image, so not pull from internet, I import it in the local repository
 # See http://docs.docker.com/articles/baseimages/
